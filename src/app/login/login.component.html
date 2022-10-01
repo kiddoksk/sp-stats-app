@@ -1,0 +1,54 @@
+<div id="inner" *ngIf="!loginCompleted">
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form class="example-form" [formGroup]="form">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input required type="text" formControlName="userName" placeholder="Enter User Name" matInput>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+        <td><mat-form-field class="example-full-width">
+          <input required type="text" formControlName="password" placeholder="Enter Password" matInput>
+        </mat-form-field></td>
+      </tr></table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="save()" color="primary">Login</button>
+  </mat-card-actions>
+  
+</mat-card>
+</div>
+
+<div id="inner" *ngIf="loginCompleted">
+  <mat-card>
+    <h2>
+      Students Stats Dashboard
+    </h2>
+  </mat-card>
+  <mat-card>
+    <h3>Features: </h3>
+  </mat-card>
+  <mat-card>
+    You can view the statistics from the student data which is populated. The data consists of various fields using which you can filter and visualize the data as Graphs
+
+  </mat-card>
+  <mat-card>
+    <b>Steps to use the application</b> <br>
+    <p><b>1.</b> In the Dashboard, you will see a list of field where you can enable or disable the toggle to filter the data</p>
+    <p><b>2.</b> You can apply filters all the available fields and save the form the visualize the data in graphs to get more insights</p>
+    <p><b>3.</b> You can try various combinations and the graphs will be populated based on the filters and combinations you select</p>
+  </mat-card>
+  <br><br>
+  <div id="inner">
+    <button mat-raised-button (click)="navigateToHome()" color="primary">View Dashboard</button>
+  </div>
+</div>

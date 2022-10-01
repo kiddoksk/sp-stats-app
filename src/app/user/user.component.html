@@ -1,0 +1,104 @@
+<div class="inner-dash">
+    <mat-card>
+        <h2>
+          Students Stats Dashboard
+        </h2>
+      </mat-card>
+</div>
+
+<br><br><br><br><br><br><br>
+
+<div class="main-box" class="inner">
+    <form class="configurations--form" [formGroup]="form">
+
+        <mat-slide-toggle color="primary" class="schedule" formControlName="gender">
+            <div class="schedule--toggle-text"> 
+                <div>Gender</div>
+            </div>
+        </mat-slide-toggle>
+        <div>
+            <br>
+            <mat-form-field floatLabel="always" appearance="outline" *ngIf="isGenderEnabled">
+            <mat-select placeholder="Choose Gender" formControlName="genderValue">
+                <mat-option *ngFor="let option of genderOptions" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <mat-slide-toggle color="primary" class="schedule" formControlName="race">
+            <div class="schedule--toggle-text"> 
+                <div>Race/Ethnicity</div>
+            </div>
+        </mat-slide-toggle>
+        <div>
+            <br>
+            <mat-form-field floatLabel="always" appearance="outline" *ngIf="isRaceEnabled">
+            <mat-select placeholder="Choose Race" formControlName="raceValue">
+                <mat-option *ngFor="let option of raceOptions" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <mat-slide-toggle color="primary" class="schedule" formControlName="parentEducation">
+            <div class="schedule--toggle-text"> 
+                <div>Parental Level Of Education</div>
+            </div>
+        </mat-slide-toggle>
+        <div>
+            <br>
+            <mat-form-field floatLabel="always" appearance="outline" *ngIf="isParentEducationEnabled">
+            <mat-select placeholder="Choose Parental Education Level" formControlName="parentEducationValue">
+                <mat-option *ngFor="let option of parentEducationOptions" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <mat-slide-toggle color="primary" class="schedule" formControlName="lunch">
+            <div class="schedule--toggle-text"> 
+                <div>Lunch</div>
+            </div>
+        </mat-slide-toggle>
+        <div>
+            <br>
+            <mat-form-field floatLabel="always" appearance="outline" *ngIf="isLunchEnabled">
+            <mat-select placeholder="Choose Lunch" formControlName="lunchValue">
+                <mat-option *ngFor="let option of lunchOptions" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <mat-slide-toggle color="primary" class="schedule" formControlName="testPreparation">
+            <div class="schedule--toggle-text"> 
+                <div>Test Preparation Course</div>
+            </div>
+        </mat-slide-toggle>
+        <div>
+            <br>
+            <mat-form-field floatLabel="always" appearance="outline" *ngIf="isTestPreparationEnabled">
+            <mat-select placeholder="Choose Test Preparation" formControlName="testPreparationValue">
+                <mat-option *ngFor="let option of testPreparationOptions" [value]="option">
+                    {{option}}
+                </mat-option>
+            </mat-select>
+            </mat-form-field>
+        </div>
+
+        <button [disabled]="disableSave" mat-flat-button color="primary" (click)="save()" type="submit">
+            Save
+        </button>
+
+    </form>
+
+<br><br><br><br><br>
+<div class="chart-container">
+    <canvas  id="MyChart" >{{ chart }}</canvas>
+</div>
+<br><br><br><br><br>

@@ -1,0 +1,50 @@
+.container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 10px;
+}
+
+.inner {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.inner-dash {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%)
+}
+
+
+.five-a-row{ 
+    float:left;
+    display:table-column;
+    width:20%;
+ }
+ 
+ .main-box{
+    width: 100%;
+ }
+
+ .schedule {
+    border: solid 1px rgba(0, 98, 255, 0.04);
+    background-color: rgba(0, 98, 255, 0.02);
+    padding: 16px;
+    min-width: 200px;
+    border-radius: 4px;
+
+    &--info-icon {
+      color: #5c98e5;
+    }
+
+    &--info-desc {
+      margin-left: 8px;
+    }
+
+    &--redirect {
+      margin-left: 24px;
+      &-icon {
+        margin-left: 8px;
+      }
+    }
+  }
