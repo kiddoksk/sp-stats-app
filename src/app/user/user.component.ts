@@ -216,5 +216,7 @@ export class UserComponent implements OnInit {
         aspectRatio:1.5
       }
     });
+	// @ts-ignore: Object is possibly 'null'.
+	document.getElementById("chart").scrollIntoView();
   }
 }
